@@ -1,6 +1,6 @@
 for %%i in (SetAcValueIndex SetDcValueIndex) do (
     powercfg -%%i Scheme_Current Sub_Processor PerfAutonomous 0
-    powercfg -%%i Scheme_Current Sub_Processor PerfCheck 16
+    powercfg -%%i Scheme_Current Sub_Processor PerfCheck 15
 
     powercfg -%%i Scheme_Current Sub_Processor ProcThrottleMin 0
     powercfg -%%i Scheme_Current Sub_Processor ProcThrottleMin1 0
