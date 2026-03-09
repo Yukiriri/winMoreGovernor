@@ -1,8 +1,9 @@
-重新调整Windows的CPU调频，尽可能复刻Linux的governor效果，以实现更多用途  
+重新调整Windows的CPU调频，尽可能复刻Linux的governor效果，并实现更多用途  
 台式和笔记本通用  
 
 ## 用途一览
 [Performance]: ../bin/set-cpufreq-performance.bat
+[BaseFreq]: ../bin/set-cpufreq-basefreq.bat
 [Powersave]: ../bin/set-cpufreq-powersave.bat
 [Ondemand]: ../bin/set-cpufreq-ondemand.bat
 [Ondemand-50]: ../bin/set-cpufreq-ondemand-50.bat
@@ -12,17 +13,18 @@
 [Conservative-75]: ../bin/set-cpufreq-conservative-75.bat
 [Conservative-99]: ../bin/set-cpufreq-conservative-99.bat
 
-| 调频器            | 频率表现                | 性能表现   | 待机电压 | AC有效 | DC有效 |
-| :---------------- | :---------------------- | :--------- | :------- | :----- | :----- |
-| [Performance]     | 恒定最高频率            | 极致响应   | 最高     | ✅      | ❌      |
-| [Powersave]       | 恒定最低频率            | 极致低功耗 | 最低     | ✅      | ✅      |
-| [Ondemand]        | 按需积极提频            | 中等响应   | 中等     | ✅      | ✅      |
-| [Ondemand-50]     | 下限50%基频按需积极提频 | 高响应     | 中等     | ✅      | ✅      |
-| [Ondemand-99]     | 下限99%基频按需积极提频 | 超高响应   | 高       | ✅      | ✅      |
-| [Conservative]    | 按需保守提频            | 中等响应   | 最低     | ✅      | ✅      |
-| [Conservative-50] | 下限50%基频按需保守提频 | 高响应     | 低       | ✅      | ✅      |
-| [Conservative-75] | 下限75%基频按需保守提频 | 高响应     | 中等     | ✅      | ✅      |
-| [Conservative-99] | 下限99%基频按需保守提频 | 超高响应   | 高       | ✅      | ✅      |
+| 调频器            | 频率表现                | 性能表现 | 待机电压 | AC有效 | DC有效 |
+| :---------------- | :---------------------- | :------- | :------- | :----- | :----- |
+| [Performance]     | 恒定最高频率            | 极致响应 | 最高     | ✅      | ❌      |
+| [BaseFreq]        | 恒定基本频率            | 最佳能效 | 中等     | ✅      | ✅      |
+| [Powersave]       | 恒定最低频率            | 最低功耗 | 最低     | ✅      | ✅      |
+| [Ondemand]        | 按需积极提频            | 中等响应 | 中等     | ✅      | ✅      |
+| [Ondemand-50]     | 下限50%基频按需积极提频 | 高响应   | 中等     | ✅      | ✅      |
+| [Ondemand-99]     | 下限99%基频按需积极提频 | 超高响应 | 高       | ✅      | ✅      |
+| [Conservative]    | 按需保守提频            | 中等响应 | 最低     | ✅      | ✅      |
+| [Conservative-50] | 下限50%基频按需保守提频 | 高响应   | 低       | ✅      | ✅      |
+| [Conservative-75] | 下限75%基频按需保守提频 | 高响应   | 中等     | ✅      | ✅      |
+| [Conservative-99] | 下限99%基频按需保守提频 | 超高响应 | 高       | ✅      | ✅      |
 
 > [!IMPORTANT]  
 > 需要管理员权限运行  
